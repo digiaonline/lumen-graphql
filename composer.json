@@ -1,0 +1,29 @@
+{
+    "name": "digiaonline/lumen-graphql",
+    "description": "GraphQL module for the Laravel and Lumen PHP frameworks.",
+    "type": "library",
+    "require": {
+        "youshido/graphql": "^1.5"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.9",
+        "laravel/lumen-framework": "^5.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christoffer Niska",
+            "email": "christofferniska@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Digia\\Lumen\\GraphQL\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Digia\\Lumen\\GraphQL\\Tests\\": "tests/"
+        }
+    }
+}
