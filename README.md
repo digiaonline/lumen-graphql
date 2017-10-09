@@ -1,6 +1,6 @@
 # Lumen GraphQL
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/digiaonline/lumen-graphql/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/digiaonline/lumen-graphql/master/LICENSE)
 [![Total Downloads](https://poser.pugx.org/digiaonline/lumen-graphql/downloads)](https://packagist.org/packages/digiaonline/lumen-graphql)
 [![Latest Stable Version](https://poser.pugx.org/digiaonline/lumen-graphql/v/stable)](https://packagist.org/packages/digiaonline/lumen-graphql)
 
