@@ -68,7 +68,7 @@ class GraphQLServiceProvider extends ServiceProvider
             throw new InvalidConfigurationException('Configuration value `schema` is required.');
         }
 
-        if (!isset($config['typeResolver'])) {
+        if (!isset($config['type_resolver'])) {
             throw new InvalidConfigurationException('Configuration value `type_resolver` is required.');
         }
     }
