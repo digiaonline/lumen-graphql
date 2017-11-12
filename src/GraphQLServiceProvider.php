@@ -2,11 +2,11 @@
 
 namespace Digia\Lumen\GraphQL;
 
-use Digia\Lumen\GraphQL\Exception\InvalidConfigurationException;
 use Digia\Lumen\GraphQL\Http\GraphiQLTokenMiddleware;
 use Digia\Lumen\GraphQL\Contracts\TypeResolverInterface;
 use Illuminate\Cache\Repository as CacheRepository;
 use Illuminate\Contracts\Foundation\Application;
+use Digia\Lumen\GraphQL\Exceptions\InvalidConfigurationException;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
 use Youshido\GraphQL\Execution\Processor;

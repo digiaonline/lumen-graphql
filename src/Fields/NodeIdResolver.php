@@ -2,7 +2,7 @@
 
 namespace Digia\Lumen\GraphQL\Fields;
 
-use Digia\Lumen\GraphQL\Exception\InvalidArgumentException;
+use Digia\Lumen\GraphQL\Exceptions\InvalidArgumentException;
 
 class NodeIdResolver
 {

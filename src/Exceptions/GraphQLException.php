@@ -1,6 +1,6 @@
 <?php
 
-namespace Digia\Lumen\GraphQL\Exception;
+namespace Digia\Lumen\GraphQL\Exceptions;
 
 class GraphQLException extends \Exception
 {
