@@ -2,13 +2,12 @@
 
 namespace Digia\Lumen\GraphQL;
 
-use Digia\Lumen\GraphQL\Http\GraphiQLTokenMiddleware;
 use Digia\Lumen\GraphQL\Contracts\TypeResolverInterface;
-use Illuminate\Cache\Repository as CacheRepository;
-use Illuminate\Contracts\Foundation\Application;
 use Digia\Lumen\GraphQL\Exceptions\InvalidConfigurationException;
+use Digia\Lumen\GraphQL\Http\GraphiQLTokenMiddleware;
+use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Lumen\Application as LumenApplication;
+use Laravel\Lumen\Application;
 use Youshido\GraphQL\Execution\Processor;
 
 class GraphQLServiceProvider extends ServiceProvider
@@ -17,31 +16,15 @@ class GraphQLServiceProvider extends ServiceProvider
     /**
      * @inheritdoc
      */
-    public function boot()
-    {
-        $basePath   = dirname(__DIR__);
-        $configPath = $basePath . '/config/graphql.php';
-
-        if ($this->app instanceof LumenApplication) {
-            $this->app->configure('graphql');
-        } else {
-            $this->publishes([$configPath => config_path('graphql.php')]);
-        }
-
-        $this->mergeConfigFrom($configPath, 'graphql');
-
-        $this->loadViewsFrom($basePath . '/resources/views', 'graphql');
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function register()
     {
+        // Configure
+        $this->app->configure('graphql');
+        $this->loadViewsFrom(dirname(__DIR__) . '/resources/views', 'graphql');
         $config = config('graphql');
-
         $this->validateConfig($config);
 
+        // Bind things to the container
         $this->app->singleton(GraphQLService::class, function (Application $app) use ($config) {
             $processor = $config['processor'] ?? Processor::class;
 
