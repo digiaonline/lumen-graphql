@@ -43,7 +43,7 @@ class GraphQLServiceProvider extends ServiceProvider
         $this->validateConfig($config);
 
         $this->app->singleton(GraphQLService::class, function (Application $app) use ($config) {
-            $processor = $config['processor'] ?: Processor::class;
+            $processor = $config['processor'] ?? Processor::class;
 
             return new GraphQLService(new $processor(new $config['schema']), $app->make(CacheRepository::class));
         });
@@ -53,12 +53,13 @@ class GraphQLServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(GraphiQLTokenMiddleware::class, function () use ($config) {
-            return new GraphiQLTokenMiddleware($config['enable_graphiql'], $config['graphiql_token']);
+            return new GraphiQLTokenMiddleware($config['enable_graphiql'], $config['graphiql_token'] ?? null);
         });
     }
 
     /**
      * @param array $config
+     *
      * @throws InvalidConfigurationException
      */
     protected function validateConfig(array $config)
