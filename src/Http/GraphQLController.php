@@ -2,11 +2,13 @@
 
 namespace Digia\Lumen\GraphQL\Http;
 
+use Digia\JsonHelpers\JsonEncoder;
 use Digia\Lumen\GraphQL\GraphQLService;
-use Illuminate\Http\JsonResponse;
+use Digia\Lumen\GraphQL\Models\GraphQLError;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Laravel\Lumen\Routing\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse as SymfonyJsonResponse;
 
 class GraphQLController extends Controller
 {
@@ -28,18 +30,35 @@ class GraphQLController extends Controller
 
     /**
      * @param Request $request
-     * @return JsonResponse
+     *
+     * @return SymfonyJsonResponse
      */
     public function process(Request $request)
     {
         $processor = $this->graphqlService->getProcessor();
 
         $query     = $request->get('query');
-        $variables = $request->has('variables') ? $request->get('variables') : [];
+        $variables = $request->get('variables', []);
 
         $responseData = $processor->processPayload($query, $variables)->getResponseData();
 
-        return response()->json($this->responseDataToJson($responseData));
+        if (isset($responseData['exceptions'])) {
+            $request->attributes->set($this->getErrorAttribute(), new GraphQLError(
+                $query, $variables, $responseData['exceptions']
+            ));
+        }
+
+        $json = $this->responseDataToJson($responseData);
+
+        return new SymfonyJsonResponse($json, 200, [], true);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getErrorAttribute()
+    {
+        return config('graphql.error_attribute', __CLASS__ . '_error');
     }
 
     /**
@@ -58,6 +77,6 @@ class GraphQLController extends Controller
      */
     protected function responseDataToJson(array $responseData)
     {
-        return json_encode($responseData);
+        return JsonEncoder::encode(array_except($responseData, ['exceptions']));
     }
 }
