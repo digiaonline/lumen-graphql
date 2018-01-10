@@ -1,10 +1,10 @@
 <?php
 
-namespace ALehdet\ContentApi\GraphQL;
+namespace Digia\Lumen\GraphQL;
 
 /**
  * Class LockFile
- * @package ALehdet\ContentApi\GraphQL
+ * @package Digia\Lumen\GraphQL
  */
 class LockFile
 {

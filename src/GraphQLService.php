@@ -3,8 +3,9 @@
 namespace Digia\Lumen\GraphQL;
 
 use Digia\Lumen\GraphQL\Contracts\TypeResolverInterface;
-use Illuminate\Cache\Repository as CacheRepository;
 use Youshido\GraphQL\Execution\Processor;
+use Illuminate\Cache\Repository as CacheRepository;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 class GraphQLService
 {
@@ -13,6 +14,12 @@ class GraphQLService
      * The cache key used when caching processor instances
      */
     const PROCESSOR_CACHE_KEY = 'graphql_processor';
+
+    /**
+     * Path to graphql introspection file
+     */
+    const INTROSPECTION_QUERY_PATH = 'graphql/Introspection.graphql';
+
 
     /**
      * @var Processor
@@ -65,5 +72,29 @@ class GraphQLService
     public function forgetProcessor()
     {
         $this->cacheRepository->forget(self::PROCESSOR_CACHE_KEY);
+    }
+
+    /**
+     * @return array
+     */
+    public function getIntrospectionQueryResponse(): array
+    {
+        return $this->getProcessor()->processPayload($this->getIntrospectionQuery())->getResponseData();
+    }
+
+    /**
+     * @return string
+     *
+     * @throws FileNotFoundException
+     */
+    private function getIntrospectionQuery(): string
+    {
+        $path = resource_path(self::INTROSPECTION_QUERY_PATH);
+
+        if (!file_exists($path)) {
+            throw new FileNotFoundException('Could not find introspection query file');
+        }
+
+        return file_get_contents($path);
     }
 }
