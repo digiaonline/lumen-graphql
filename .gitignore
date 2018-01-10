@@ -1,1 +1,6 @@
+.idea
 /vendor/
+/coverage/
+/build/logs/clover.xml
+phpunit.xml
+

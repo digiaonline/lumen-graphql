@@ -3,11 +3,14 @@
     "description": "GraphQL module for the Laravel and Lumen PHP frameworks.",
     "type": "library",
     "require": {
-        "youshido/graphql": "^1.5"
+        "youshido/graphql": "^1.5",
+        "jalle19/laravel-lost-interfaces": "^1.0",
+        "digiaonline/json-helpers": "^1.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9",
-        "laravel/lumen-framework": "^5.5"
+        "laravel/lumen-framework": "^5.5",
+        "phpunit/phpunit": "^5.7"
     },
     "license": "MIT",
     "authors": [
