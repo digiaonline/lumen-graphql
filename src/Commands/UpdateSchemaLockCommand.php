@@ -47,7 +47,7 @@ class UpdateSchemaLockCommand extends Command implements CommandInterface
      */
     public function handle()
     {
-        $response = $this->graphQlService->getIntrospectionQueryResponse();
+        $response = $this->graphQlService->getStoredQueryResponse('graphql/Introspection.graphql');
 
         file_put_contents(LockFile::getAbsolutePath(), JsonEncoder::encode($response));
     }
