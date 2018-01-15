@@ -20,8 +20,20 @@ class GraphQLServiceProvider extends ServiceProvider
     {
         // Configure
         $this->app->configure('graphql');
+        // Load graphiql view
         $this->loadViewsFrom(dirname(__DIR__) . '/resources/views', 'graphql');
-        $config = config('graphql');
+        // Register bindings
+        $this->registerBindings();
+    }
+
+    /**
+     * Register bindings.
+     *
+     * @throws InvalidConfigurationException
+     */
+    public function registerBindings()
+    {
+        $config = $this->app['config']->get('graphql');
         $this->validateConfig($config);
 
         // Bind things to the container
