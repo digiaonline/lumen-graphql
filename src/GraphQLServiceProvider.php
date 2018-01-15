@@ -12,14 +12,18 @@ use Youshido\GraphQL\Execution\Processor;
 
 class GraphQLServiceProvider extends ServiceProvider
 {
-
+    const CONFIG_KEY = 'graphql';
     /**
      * @inheritdoc
      */
     public function register()
     {
-        // Configure
-        $this->app->configure('graphql');
+        // In Lumen application configuration files needs to be loaded implicitly
+        if ($this->app instanceof \Laravel\Lumen\Application) {
+            $this->app->configure(self::CONFIG_KEY);
+        } else {
+            $this->publishes([$this->configPath() => config_path('graphql.php')]);
+        }
         // Load graphiql view
         $this->loadViewsFrom(dirname(__DIR__) . '/resources/views', 'graphql');
         // Register bindings
