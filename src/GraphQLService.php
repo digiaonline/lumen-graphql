@@ -3,7 +3,7 @@
 namespace Digia\Lumen\GraphQL;
 
 use Youshido\GraphQL\Execution\Processor;
-use Illuminate\Cache\Repository as CacheRepository;
+use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 class GraphQLService

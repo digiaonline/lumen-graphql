@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\JsonResponse as SymfonyJsonResponse;
 
 class GraphQLController extends Controller
 {
+    public const ATTRIBUTE_ERROR = __CLASS__ . '_error';
 
     /**
      * @var GraphQLService
@@ -33,7 +34,7 @@ class GraphQLController extends Controller
      *
      * @return SymfonyJsonResponse
      */
-    public function process(Request $request)
+    public function handle(Request $request)
     {
         $processor = $this->graphqlService->getProcessor();
 
@@ -58,7 +59,7 @@ class GraphQLController extends Controller
      */
     protected function getErrorAttribute()
     {
-        return config('graphql.error_attribute', __CLASS__ . '_error');
+        return config('graphql.error_attribute', self::ATTRIBUTE_ERROR);
     }
 
     /**
