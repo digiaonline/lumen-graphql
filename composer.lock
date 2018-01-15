@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cd93dd9df0faba77ee3fa3f194c818f",
+    "content-hash": "688c9462c711d78b0ebd7f0722c9137a",
     "packages": [
         {
             "name": "digiaonline/json-helpers",
@@ -3734,6 +3734,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.1"
+    },
     "platform-dev": []
 }

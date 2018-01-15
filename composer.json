@@ -5,7 +5,8 @@
     "require": {
         "youshido/graphql": "^1.5",
         "jalle19/laravel-lost-interfaces": "^1.0",
-        "digiaonline/json-helpers": "^1.0"
+        "digiaonline/json-helpers": "^1.0",
+        "php": ">=7.1"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9",
