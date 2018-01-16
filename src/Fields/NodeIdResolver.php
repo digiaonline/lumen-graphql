@@ -2,7 +2,7 @@
 
 namespace Digia\Lumen\GraphQL\Fields;
 
-use Digia\Lumen\GraphQL\Exceptions\InvalidArgumentException;
+use Digia\Lumen\GraphQL\Exceptions\MalformedNodeId;
 
 class NodeIdResolver
 {
@@ -41,14 +41,14 @@ class NodeIdResolver
     /**
      * @param string $globalId
      * @return array
-     * @throws InvalidArgumentException
+     * @throws MalformedNodeId
      */
     protected static function fromGlobalId($globalId)
     {
         $decodedGlobalId = base64_decode($globalId);
 
         if (strpos($decodedGlobalId, ':') === false) {
-            throw new InvalidArgumentException('Node ID is malformed.');
+            throw new MalformedNodeId('Node ID is malformed.');
         }
 
         return explode(':', $decodedGlobalId);

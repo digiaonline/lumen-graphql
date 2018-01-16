@@ -2,15 +2,15 @@
 
 namespace Digia\Lumen\GraphQL\Tests\Commands;
 
-use Digia\Lumen\GraphQL\Commands\ClearProcessorCacheCommand;
 use Digia\Lumen\GraphQL\GraphQLService;
 use Digia\Lumen\GraphQL\Tests\TestCase;
+use Digia\Lumen\GraphQL\Commands\UpdateSchemaLockCommand;
 
 /**
- * Class ClearProcessorCacheCommandTest
+ * Class UpdateSchemaLockCommand
  * @package Digia\Lumen\GraphQL\Tests\Commands
  */
-class ClearProcessorCacheCommandTest extends TestCase
+class UpdateSchemaLockCommandTest extends TestCase
 {
     /**
      * Tests that the command correctly calls the service
@@ -20,13 +20,14 @@ class ClearProcessorCacheCommandTest extends TestCase
         /** @var \PHPUnit_Framework_MockObject_MockObject|GraphQLService $service */
         $service = $this->getMockBuilder(GraphQLService::class)
                         ->disableOriginalConstructor()
-                        ->setMethods(['forgetProcessor'])
+                        ->setMethods(['getStoredQueryResponse'])
                         ->getMock();
 
         $service->expects($this->once())
-                ->method('forgetProcessor');
+                ->method('getStoredQueryResponse')
+                ->with('graphql/Introspection.graphql');
 
-        $command = new ClearProcessorCacheCommand($service);
+        $command = new UpdateSchemaLockCommand($service);
         $command->handle();
     }
 }

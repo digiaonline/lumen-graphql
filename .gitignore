@@ -3,4 +3,4 @@
 /coverage/
 /build/logs/clover.xml
 phpunit.xml
-
+graphql.schema.lock.json
