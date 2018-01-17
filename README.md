@@ -1,5 +1,6 @@
 # Lumen GraphQL
-
+[![Build Status](https://travis-ci.org/digiaonline/lumen-graphql.svg?branch=master)](https://travis-ci.org/digiaonline/lumen-graphql)
+[![Coverage Status](https://coveralls.io/repos/github/digiaonline/lumen-graphql/badge.svg?branch=master)](https://coveralls.io/github/digiaonline/lumen-graphql?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/digiaonline/lumen-graphql/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/digiaonline/lumen-graphql/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/digiaonline/lumen-graphql/v/stable)](https://packagist.org/packages/digiaonline/lumen-graphql)
 [![Total Downloads](https://poser.pugx.org/digiaonline/lumen-graphql/downloads)](https://packagist.org/packages/digiaonline/lumen-graphql)

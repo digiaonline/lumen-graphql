@@ -2,7 +2,7 @@
 
 return [
 
-    'schema' => '',
+    'schema' => \Youshido\GraphQL\Schema\Schema::class,
 
     'type_resolver' => '',
 
@@ -12,4 +12,5 @@ return [
 
     // 'graphiql_token' => '',
 
+    // 'error_attribute' => '',
 ];
