@@ -3,10 +3,12 @@
     "description": "GraphQL module for the Laravel and Lumen PHP frameworks.",
     "type": "library",
     "require": {
-        "youshido/graphql": "^1.5",
-        "jalle19/laravel-lost-interfaces": "^1.0",
+        "php": ">=7.1",
         "digiaonline/json-helpers": "^1.0",
-        "php": ">=7.1"
+        "illuminate/console": "^5.5",
+        "illuminate/support": "^5.5",
+        "jalle19/laravel-lost-interfaces": "^1.0",
+        "youshido/graphql": "^1.5"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9",
@@ -34,5 +36,8 @@
         "psr-4": {
             "Digia\\Lumen\\GraphQL\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "sort-packages" : true
     }
 }
