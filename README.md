@@ -11,7 +11,7 @@ GraphQL module for the Laravel and Lumen PHP frameworks.
 
 ## Requirements
 
-- PHP 5.6 or newer
+- PHP 7.1 or newer
 - [Composer](http://getcomposer.org)
 - [Lumen](https://lumen.laravel.com/) / [Laravel](https://laravel.com) 5.5 or newer
 
@@ -45,6 +45,20 @@ Add the following line to ```bootstrap/app.php```:
 ```php
 $app->register(Digia\Lumen\GraphQL\GraphQLServiceProvider::class);
 ```
+
+Add the following lines to ```routes/web.php```:
+
+```php
+$router->get('/graphql', [
+    'uses' => 'Digia\Lumen\GraphQL\Http\GraphQLController@renderGraphiQL',
+]);
+
+$router->post('/graphql', [
+    'uses' => 'Digia\Lumen\GraphQL\Http\GraphQLController@handle',
+]);
+```
+
+**NOTE:** Make sure that your route group does not have a ```namespace``` attribute. Otherwise Lumen will be unable to find the ```GraphQLController```.
 
 ## Contributing
 
