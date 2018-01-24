@@ -8,6 +8,7 @@
         "illuminate/console": "^5.5",
         "illuminate/support": "^5.5",
         "jalle19/laravel-lost-interfaces": "^1.0",
+        "nordsoftware/lumen-newrelic": "^1.1",
         "youshido/graphql": "^1.5"
     },
     "require-dev": {
