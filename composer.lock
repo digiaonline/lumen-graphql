@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2bdb68d6b8911d491a2470c2e14d516",
+    "content-hash": "923eb683004c9495fe8f6fd92adde304",
     "packages": [
         {
             "name": "digiaonline/json-helpers",
@@ -499,6 +499,47 @@
             "time": "2017-12-24T20:02:59+00:00"
         },
         {
+            "name": "intouch/newrelic",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/In-Touch/newrelic.git",
+                "reference": "20db6cb25a9eb88e504e16829077c56828c176cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/In-Touch/newrelic/zipball/20db6cb25a9eb88e504e16829077c56828c176cc",
+                "reference": "20db6cb25a9eb88e504e16829077c56828c176cc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Intouch\\Newrelic": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Leckey",
+                    "email": "pleckey@intouchinsight.com"
+                }
+            ],
+            "description": "Namespaced Wrapper for NewRelic PHP Agent",
+            "homepage": "http://github.com/In-Touch/newrelic/",
+            "keywords": [
+                "new relic",
+                "newrelic"
+            ],
+            "time": "2014-08-18T12:08:45+00:00"
+        },
+        {
             "name": "jalle19/laravel-lost-interfaces",
             "version": "1.1.0",
             "source": {
@@ -587,6 +628,89 @@
                 "time"
             ],
             "time": "2017-01-16T07:55:07+00:00"
+        },
+        {
+            "name": "nordsoftware/lumen-chained-exception-handler",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nordsoftware/lumen-chained-exception-handler.git",
+                "reference": "d9a861196551c8cccd955c838d6d73a86981339c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nordsoftware/lumen-chained-exception-handler/zipball/d9a861196551c8cccd955c838d6d73a86981339c",
+                "reference": "d9a861196551c8cccd955c838d6d73a86981339c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.2",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nord\\Lumen\\ChainedExceptionHandler\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Stenvall",
+                    "email": "sam.stenvall@nordsoftware.com"
+                }
+            ],
+            "description": "A chained exception handler for the Lumen framework",
+            "time": "2016-12-09T09:00:09+00:00"
+        },
+        {
+            "name": "nordsoftware/lumen-newrelic",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nordsoftware/lumen-newrelic.git",
+                "reference": "31bac9f921c0a3445ecc53fbe0578f7f0e866c0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nordsoftware/lumen-newrelic/zipball/31bac9f921c0a3445ecc53fbe0578f7f0e866c0d",
+                "reference": "31bac9f921c0a3445ecc53fbe0578f7f0e866c0d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.2",
+                "intouch/newrelic": "^1.0",
+                "nordsoftware/lumen-chained-exception-handler": "^1.0",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "laravel/lumen-framework": "^5.3",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nord\\Lumen\\NewRelic\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Stenvall",
+                    "email": "sam.stenvall@nordsoftware.com"
+                }
+            ],
+            "description": "New Relic instrumentation for the Lumen framework",
+            "time": "2016-12-12T09:51:36+00:00"
         },
         {
             "name": "psr/container",

@@ -2,7 +2,7 @@
 
 namespace Digia\Lumen\GraphQL\Tests\Http;
 
-use Digia\Lumen\GraphQL\Http\GraphiQLTokenMiddleware;
+use Digia\Lumen\GraphQL\Http\Middleware\GraphiQLTokenMiddleware;
 use Digia\Lumen\GraphQL\Tests\MiddlewareTestCase;
 use Illuminate\Http\Request;
 

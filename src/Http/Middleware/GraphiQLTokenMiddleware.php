@@ -1,11 +1,15 @@
 <?php
 
-namespace Digia\Lumen\GraphQL\Http;
+namespace Digia\Lumen\GraphQL\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * Class GraphiQLTokenMiddleware
+ * @package Digia\Lumen\GraphQL\Http\Middleware
+ */
 class GraphiQLTokenMiddleware
 {
 
