@@ -16,6 +16,13 @@ class UpdateSchemaLockCommand extends Command implements CommandInterface
 {
 
     /**
+     * Path to default Introspection query
+     *
+     * @var string
+     */
+    public const INTROSPECTION_GRAPHQL =  __DIR__ . '/../../resources/graphql/Introspection.graphql';
+
+    /**
      * @var string
      */
     protected $signature = 'graphql:schema:lock:update';
@@ -43,11 +50,21 @@ class UpdateSchemaLockCommand extends Command implements CommandInterface
     }
 
     /**
+     * Returns path to graphql query
+     *
+     * @return string
+     */
+    protected function getQueryPath()
+    {
+        return self::INTROSPECTION_GRAPHQL;
+    }
+
+    /**
      * @inheritDoc
      */
     public function handle()
     {
-        $response = $this->graphQlService->getStoredQueryResponse('graphql/Introspection.graphql');
+        $response = $this->graphQlService->getQueryResponse($this->getQueryPath());
 
         file_put_contents(LockFile::getAbsolutePath(), JsonEncoder::encode($response));
     }

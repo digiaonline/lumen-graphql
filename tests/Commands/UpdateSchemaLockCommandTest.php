@@ -20,12 +20,12 @@ class UpdateSchemaLockCommandTest extends TestCase
         /** @var \PHPUnit_Framework_MockObject_MockObject|GraphQLService $service */
         $service = $this->getMockBuilder(GraphQLService::class)
                         ->disableOriginalConstructor()
-                        ->setMethods(['getStoredQueryResponse'])
+                        ->setMethods(['getQueryResponse'])
                         ->getMock();
 
         $service->expects($this->once())
-                ->method('getStoredQueryResponse')
-                ->with('graphql/Introspection.graphql');
+                ->method('getQueryResponse')
+                ->with(UpdateSchemaLockCommand::INTROSPECTION_GRAPHQL, []);
 
         $command = new UpdateSchemaLockCommand($service);
         $command->handle();
