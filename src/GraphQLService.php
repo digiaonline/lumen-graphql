@@ -90,7 +90,7 @@ class GraphQLService
      *
      * @throws \Exception any underlying exception that occurred while processing the request
      */
-    private function getQueryResponse(string $query, array $variables = []): array
+    public function getQueryResponse(string $query, array $variables = []): array
     {
         $processor = $this->getProcessor();
         $response  = $processor->processPayload($query, $variables)->getResponseData();
