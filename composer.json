@@ -41,7 +41,12 @@
             "Digia\\Lumen\\GraphQL\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "test": [
+            "phpunit --testsuite unit"
+        ]
+    },
     "config": {
-        "sort-packages" : true
+        "sort-packages": true
     }
 }
