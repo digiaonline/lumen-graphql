@@ -11,7 +11,11 @@ use Youshido\GraphQL\Type\NonNullType;
 use Youshido\GraphQL\Type\Scalar\BooleanType;
 use Youshido\GraphQL\Type\Scalar\IdType;
 
-abstract class DeleteEntityFieldAbstract extends AbstractField
+/**
+ * Class AbstractDeleteEntityField
+ * @package Digia\Lumen\GraphQL\Fields
+ */
+abstract class AbstractDeleteEntityField extends AbstractField
 {
 
     use ResolvesNodesTrait;

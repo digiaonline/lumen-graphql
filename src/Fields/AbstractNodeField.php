@@ -6,7 +6,7 @@ use Youshido\GraphQL\Config\Field\FieldConfig;
 use Youshido\GraphQL\Type\NonNullType;
 use Youshido\GraphQL\Type\Scalar\IdType;
 
-abstract class NodeFieldAbstractAbstract extends EntityFieldAbstract
+abstract class AbstractNodeField extends AbstractEntityField
 {
 
     /**

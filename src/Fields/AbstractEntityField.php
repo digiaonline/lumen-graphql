@@ -6,7 +6,11 @@ use Digia\Lumen\GraphQL\Models\ResolveContext;
 use Youshido\GraphQL\Execution\ResolveInfo;
 use Youshido\GraphQL\Field\AbstractField;
 
-abstract class EntityFieldAbstract extends AbstractField
+/**
+ * Class AbstractEntityField
+ * @package Digia\Lumen\GraphQL\Fields
+ */
+abstract class AbstractEntityField extends AbstractField
 {
 
     /**

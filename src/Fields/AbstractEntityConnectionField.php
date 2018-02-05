@@ -11,7 +11,11 @@ use Youshido\GraphQL\Relay\Connection\ArrayConnection;
 use Youshido\GraphQL\Relay\Connection\Connection;
 use Youshido\GraphQL\Type\AbstractType;
 
-abstract class EntityConnectionFieldAbstract extends AbstractField
+/**
+ * Class AbstractEntityConnectionField
+ * @package Digia\Lumen\GraphQL\Fields
+ */
+abstract class AbstractEntityConnectionField extends AbstractField
 {
 
     /**
