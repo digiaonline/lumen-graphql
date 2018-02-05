@@ -9,9 +9,12 @@ use Youshido\GraphQL\Execution\ResolveInfo;
 use Youshido\GraphQL\Field\AbstractField;
 use Youshido\GraphQL\Type\InputObject\AbstractInputObjectType;
 use Youshido\GraphQL\Type\NonNullType;
-use Youshido\GraphQL\Type\Scalar\IdType;
 
-abstract class UpdateEntityFieldAbstract extends AbstractField
+/**
+ * Class AbstractCreateEntityField
+ * @package Digia\Lumen\GraphQL\Fields
+ */
+abstract class AbstractCreateEntityField extends AbstractField
 {
 
     use ResolvesNodesTrait;
@@ -30,14 +33,14 @@ abstract class UpdateEntityFieldAbstract extends AbstractField
      * @param ResolveContext $context
      * @return mixed
      */
-    abstract protected function updateEntity(ResolveContext $context);
+    abstract protected function createEntity(ResolveContext $context);
 
     /**
      * @inheritdoc
      */
     public function getDescription()
     {
-        return 'Updates an existing entity.';
+        return 'Creates a new entity.';
     }
 
     /**
@@ -45,19 +48,17 @@ abstract class UpdateEntityFieldAbstract extends AbstractField
      */
     public function build(FieldConfig $config)
     {
-        $config->addArgument('id', new NonNullType(new IdType()));
         $config->addArgument($this->getEntityKey(), new NonNullType($this->getInputType()));
     }
 
     /**
      * @inheritdoc
-     * @suppress PhanTypeMismatchArgument
      */
     public function resolve($value, array $args, ResolveInfo $info)
     {
         $context = new ResolveContext($value, $args, $info);
 
-        return $this->updateEntity($context);
+        return $this->createEntity($context);
     }
 
     /**
@@ -66,5 +67,14 @@ abstract class UpdateEntityFieldAbstract extends AbstractField
     protected function getEntityKey()
     {
         return camel_case($this->getEntityTypeName());
+    }
+
+    /**
+     * @param ResolveContext $context
+     * @return array
+     */
+    protected function getEntityProperties(ResolveContext $context)
+    {
+        return $context->getArgument($this->getEntityKey());
     }
 }
