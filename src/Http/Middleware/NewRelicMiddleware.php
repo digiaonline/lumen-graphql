@@ -5,7 +5,7 @@ namespace Digia\Lumen\GraphQL\Http\Middleware;
 use Closure;
 use Digia\JsonHelpers\JsonEncoder;
 use Digia\Lumen\GraphQL\Models\GraphQLError;
-use Digia\Lumen\GraphQL\Exceptions\MalformedNodeId;
+use Digia\Lumen\GraphQL\Exceptions\MalformedNodeIdException;
 use Digia\Lumen\GraphQL\Exceptions\EntityNotFoundException;
 use Nord\Lumen\NewRelic\NewRelicMiddleware as BaseNewRelicMiddleware;
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class NewRelicMiddleware extends BaseNewRelicMiddleware
      */
     protected $dontReport = [
         EntityNotFoundException::class,
-        MalformedNodeId::class
+        MalformedNodeIdException::class
     ];
 
     /**

@@ -18,7 +18,7 @@
         "vlucas/phpdotenv": "~2.2"
     },
     "suggest": {
-        "nordsoftware/lumen-newrelic": "New Relic instrumentation for the Lumen framework"
+        "nordsoftware/lumen-newrelic": "Required to use the New Relic middleware (1.1.*)."
     },
     "license": "MIT",
     "authors": [
@@ -41,7 +41,12 @@
             "Digia\\Lumen\\GraphQL\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "test": [
+            "phpunit --testsuite unit"
+        ]
+    },
     "config": {
-        "sort-packages" : true
+        "sort-packages": true
     }
 }
