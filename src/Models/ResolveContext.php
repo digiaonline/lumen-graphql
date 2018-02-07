@@ -58,7 +58,7 @@ class ResolveContext
      */
     public function getArgument($name)
     {
-        return $this->arguments[$name] ?: null;
+        return $this->arguments[$name] ?? null;
     }
 
     /**
