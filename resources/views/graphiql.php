@@ -10,7 +10,7 @@
 <script src="//unpkg.com/whatwg-fetch@0.11.1/fetch.js"></script>
 <script src="//unpkg.com/react@^15.0/dist/react.min.js"></script>
 <script src="//unpkg.com/react-dom@^15.0/dist/react-dom.min.js"></script>
-<script src="//unpkg.com/graphiql@^0.9.3/graphiql.js"></script>
+<script src="//unpkg.com/graphiql@0.9.3/graphiql.js"></script>
 <script>
     function graphQLFetcher(graphQLParams) {
         return fetch('/graphql', {
