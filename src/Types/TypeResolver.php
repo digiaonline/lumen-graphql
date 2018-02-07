@@ -2,6 +2,7 @@
 
 namespace Digia\Lumen\GraphQL\Types;
 
+use Digia\Lumen\GraphQL\Contracts\TypeResolverInterface;
 use Digia\Lumen\GraphQL\Exceptions\UnsupportedTypeException;
 use Youshido\GraphQL\Type\AbstractType;
 
@@ -9,7 +10,7 @@ use Youshido\GraphQL\Type\AbstractType;
  * Class TypeResolver
  * @package Digia\Lumen\GraphQL\Types
  */
-class TypeResolver
+class TypeResolver implements TypeResolverInterface
 {
     /**
      * @param array $object

@@ -8,8 +8,8 @@ interface TypeResolverInterface
 {
 
     /**
-     * @param mixed $entity
+     * @param array $entity
      * @return AbstractType
      */
-    public function resolveType($entity);
+    public static function resolveType(array $entity): AbstractType;
 }
