@@ -13,4 +13,8 @@ return [
     // 'graphiql_token' => '',
 
     // 'error_attribute' => '',
+
+    'typeAttribute' => 'type',
+
+    'types' => [],
 ];
