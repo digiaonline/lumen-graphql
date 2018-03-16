@@ -5,7 +5,6 @@
 [![Latest Stable Version](https://poser.pugx.org/digiaonline/lumen-graphql/v/stable)](https://packagist.org/packages/digiaonline/lumen-graphql)
 [![Total Downloads](https://poser.pugx.org/digiaonline/lumen-graphql/downloads)](https://packagist.org/packages/digiaonline/lumen-graphql)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/digiaonline/lumen-graphql/master/LICENSE)
-[![Gitter](https://img.shields.io/gitter/room/norsoftware/open-source.svg?maxAge=2592000)](https://gitter.im/nordsoftware/open-source)
 
 GraphQL module for the Laravel and Lumen PHP frameworks.
 
