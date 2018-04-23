@@ -39,7 +39,7 @@ class GraphQLController extends Controller
         $processor = $this->graphqlService->getProcessor();
 
         $query     = $request->get('query');
-        $variables = $request->get('variables', []);
+        $variables = $request->get('variables') ?? [];
 
         $responseData = $processor->processPayload($query, $variables)->getResponseData();
 
