@@ -25,7 +25,7 @@ class UpdateSchemaLockCommandTest extends TestCase
 
         $service->expects($this->once())
                 ->method('getQueryResponse')
-                ->with(UpdateSchemaLockCommand::INTROSPECTION_GRAPHQL, []);
+                ->with(file_get_contents(UpdateSchemaLockCommand::INTROSPECTION_GRAPHQL), []);
 
         $command = new UpdateSchemaLockCommand($service);
         $command->handle();
