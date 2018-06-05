@@ -47,7 +47,7 @@ class GraphQLError
      */
     public function getQuery(): string
     {
-        return $this->query;
+        return json_encode($this->query);
     }
 
     /**
