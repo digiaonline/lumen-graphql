@@ -16,7 +16,7 @@ class NodeIdResolver
      * @return string
      * @throws MalformedNodeIdException
      */
-    public static function typeFromGlobalId($globalId): string
+    public static function typeFromGlobalId(string $globalId): string
     {
         return self::fromGlobalId($globalId)[self::INDEX_TYPE];
     }
@@ -27,7 +27,7 @@ class NodeIdResolver
      * @return string
      * @throws MalformedNodeIdException
      */
-    public static function idFromGlobalId($globalId): string
+    public static function idFromGlobalId(string $globalId): string
     {
         return self::fromGlobalId($globalId)[self::INDEX_ID];
     }
@@ -38,7 +38,7 @@ class NodeIdResolver
      *
      * @return string
      */
-    public static function toGlobalId($typeName, $id): string
+    public static function toGlobalId(string $typeName, string $id): string
     {
         return base64_encode(implode(':', [$typeName, $id]));
     }
@@ -49,7 +49,7 @@ class NodeIdResolver
      * @return array
      * @throws MalformedNodeIdException
      */
-    protected static function fromGlobalId($globalId): array
+    protected static function fromGlobalId(string $globalId): array
     {
         $decodedGlobalId = base64_decode($globalId);
 
