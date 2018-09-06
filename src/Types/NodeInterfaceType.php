@@ -1,6 +1,6 @@
 <?php
 
-namespace Digia\Lumen\GraphQL\Fields;
+namespace Digia\Lumen\GraphQL\Types;
 
 use Digia\Lumen\GraphQL\Traits\ResolvesTypeTrait;
 use Youshido\GraphQL\Relay\Field\GlobalIdField;
