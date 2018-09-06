@@ -7,23 +7,27 @@ use Digia\Lumen\GraphQL\Exceptions\MalformedNodeIdException;
 class NodeIdResolver
 {
 
-    const INDEX_TYPE = 0;
-    const INDEX_ID   = 1;
+    private const INDEX_TYPE = 0;
+    private const INDEX_ID   = 1;
 
     /**
      * @param string $globalId
+     *
      * @return string
+     * @throws MalformedNodeIdException
      */
-    public static function typeFromGlobalId($globalId)
+    public static function typeFromGlobalId(string $globalId): string
     {
         return self::fromGlobalId($globalId)[self::INDEX_TYPE];
     }
 
     /**
      * @param string $globalId
+     *
      * @return string
+     * @throws MalformedNodeIdException
      */
-    public static function idFromGlobalId($globalId)
+    public static function idFromGlobalId(string $globalId): string
     {
         return self::fromGlobalId($globalId)[self::INDEX_ID];
     }
@@ -31,9 +35,10 @@ class NodeIdResolver
     /**
      * @param string $typeName
      * @param string $id
+     *
      * @return string
      */
-    public static function toGlobalId($typeName, $id)
+    public static function toGlobalId(string $typeName, string $id): string
     {
         return base64_encode(implode(':', [$typeName, $id]));
     }
@@ -44,12 +49,12 @@ class NodeIdResolver
      * @return array
      * @throws MalformedNodeIdException
      */
-    protected static function fromGlobalId($globalId)
+    protected static function fromGlobalId(string $globalId): array
     {
         $decodedGlobalId = base64_decode($globalId);
 
         if (strpos($decodedGlobalId, ':') === false) {
-            throw new MalformedNodeIdException('Node ID is malformed.');
+            throw new MalformedNodeIdException(sprintf('Node ID "%s" is malformed.', $globalId));
         }
 
         return explode(':', $decodedGlobalId);
