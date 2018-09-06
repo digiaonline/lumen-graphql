@@ -22,6 +22,7 @@ class NodeIdResolverTest extends TestCase
 
     /**
      * @expectedException \Digia\Lumen\GraphQL\Exceptions\MalformedNodeIdException
+     * @expectedExceptionMessage Node ID "Test1" is malformed.
      */
     public function testIdFromGlobalIdWithMalformedId()
     {

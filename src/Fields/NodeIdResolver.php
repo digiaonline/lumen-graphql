@@ -54,7 +54,7 @@ class NodeIdResolver
         $decodedGlobalId = base64_decode($globalId);
 
         if (strpos($decodedGlobalId, ':') === false) {
-            throw new MalformedNodeIdException('Node ID is malformed.');
+            throw new MalformedNodeIdException(sprintf('Node ID "%s" is malformed.', $globalId));
         }
 
         return explode(':', $decodedGlobalId);
