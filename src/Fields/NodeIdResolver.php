@@ -7,8 +7,8 @@ use Digia\Lumen\GraphQL\Exceptions\MalformedNodeIdException;
 class NodeIdResolver
 {
 
-    const INDEX_TYPE = 0;
-    const INDEX_ID   = 1;
+    private const INDEX_TYPE = 0;
+    private const INDEX_ID   = 1;
 
     /**
      * @param string $globalId
