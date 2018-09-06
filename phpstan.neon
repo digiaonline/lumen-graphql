@@ -1,0 +1,10 @@
+includes:
+	- vendor/phpstan/phpstan/conf/config.level5.neon
+
+parameters:
+	ignoreErrors:
+		# Ignore "Function config_path not found", it's a side-effect of supporting both Laravel and Lumen
+		- '#Function config_path not found#'
+		- '#GraphQLServiceProvider::configPath#'
+		# Ignore another Laravel/Lumen type-hint snafu issue
+		- "#Cannot access offset 'config' on Illuminate#"

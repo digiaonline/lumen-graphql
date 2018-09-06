@@ -12,8 +12,8 @@
     },
     "require-dev": {
         "laravel/lumen-framework": "^5.5",
-        "mockery/mockery": "^0.9.9",
         "nordsoftware/lumen-newrelic": "^1.1",
+        "phpstan/phpstan": "^0.10.3",
         "phpunit/phpunit": "^5.7",
         "vlucas/phpdotenv": "~2.2"
     },
@@ -43,7 +43,8 @@
     },
     "scripts": {
         "test": [
-            "phpunit --testsuite unit"
+            "phpunit --testsuite unit",
+            "phpstan analyse src/"
         ]
     },
     "config": {

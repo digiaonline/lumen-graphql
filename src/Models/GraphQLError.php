@@ -23,9 +23,9 @@ class GraphQLError
     /**
      * GraphQLError constructor.
      *
-     * @param $query
-     * @param $variables
-     * @param $exceptions
+     * @param string       $query
+     * @param array        $variables
+     * @param \Exception[] $exceptions
      */
     public function __construct($query, $variables, $exceptions)
     {

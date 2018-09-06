@@ -8,7 +8,8 @@ trait ResolvesTypeTrait
 {
 
     /**
-     * @param $entity
+     * @param mixed $entity
+     *
      * @return string
      */
     protected function resolveType($entity)
