@@ -73,7 +73,18 @@ class GraphQLController extends Controller
     }
 
     /**
+     * Renders the Playground interactive query interface
+     *
+     * @return View
+     */
+    public function renderPlayground()
+    {
+        return view('graphql::playground');
+    }
+
+    /**
      * @param array $responseData
+     *
      * @return string
      */
     protected function responseDataToJson(array $responseData)
