@@ -28,9 +28,9 @@ class PaginationResolver
     /**
      * @param array $args
      *
-     * @return int|null
+     * @return int
      */
-    public static function resolveSize(array $args)
+    public static function resolveSize(array $args): int
     {
         return isset($args['first']) ? (int)$args['first'] : Page::DEFAULT_SIZE;
     }
